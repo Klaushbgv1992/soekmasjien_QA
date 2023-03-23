@@ -1,0 +1,970 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@100;300;400;500;700;800;900&display=swap");
+/*@import url('https://fonts.googleapis.com/css?family=Montserrat');*/
+* {
+  margin: 0;
+  padding: 0;
+  overflow-x:hidden;
+  box-sizing: border-box;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+body {
+  
+  /*background: #343541;*/
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/background2.jpeg);
+}
+
+#app {
+  width: 100vw;
+  height: 100%;
+  margin: auto;
+  padding: 5%;
+  /*background: #1b26a4;*/
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/backgroundfirst.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+ 
+  justify-content: space-between;
+}
+.popup{
+  background-color: #c2c1c1e3;
+  width: 90%;
+  height: 45%;
+  padding: 30px 40px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 52%;
+  border-radius: 8px;
+  font-family: "Alegreya Sans",sans-serif;
+  display: none;
+  text-align: justify;
+  font-size: 14px;
+  
+}
+.popup button{
+  display: block;
+  margin:  0 0 0px auto;
+  background-color: red;
+  font-size: 15px;
+  color: #000000;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border: 2px solid #000000e3;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #000;
+  width: 20px;
+  position: sticky;
+  top: 0;
+}
+
+.popup p{
+  font-size: 14px;
+  text-align: justify;
+  margin: 5px 0;
+  line-height: 25px;
+}
+
+.popup p li {
+  text-decoration: none;
+  color: #fff; 
+  font-size: 20px;
+  /*margin: 0px;*/
+}
+
+#chat_container {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  /*display: flex;*/
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+#snaaks {
+  text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.snaakscontainer {
+    position: relative;
+    bottom: 1px;
+    right: 25%;
+}
+
+.sarsswitch, #snaaks {
+    display: inline-block; /* display elements as inline block */
+}
+
+/* hides scrollbar */
+#chat_container::-webkit-scrollbar {
+  display: none;
+}
+
+.wrapper {
+  /**/
+  align-items: center;
+  justify-content: center;
+  /**/
+  width: 100%;  
+  padding: 15px;
+  
+}
+
+.ai {
+  background: #40414F;
+}
+
+.chat {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  display: flex;
+  /*change*/
+  align-items: center;
+  justify-content: center;
+
+ /**/ 
+
+ 
+  flex-direction: row;
+  /*align-items: flex-start;*/
+  gap: 10px;
+}
+
+.profile {
+  width: 36px;
+  height: 36px;
+  border-radius: 5px;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ai .profile {
+  background: #fafafa;
+}
+
+.profile img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+
+.message {
+  flex: 1;
+  color: #dcdcdc;
+  font-size: 20px;
+  max-width: 80%;
+  overflow-x: scroll;
+  align-items: center;
+  justify-content: center;
+  /**/
+
+  /*
+   * white space refers to any spaces, tabs, or newline characters that are used to format the CSS code
+   * specifies how white space within an element should be handled. It is similar to the "pre" value, which tells the browser to treat all white space as significant and to preserve it exactly as it appears in the source code.
+   * The pre-wrap value allows the browser to wrap long lines of text onto multiple lines if necessary.
+   * The default value for the white-space property in CSS is "normal". This tells the browser to collapse multiple white space characters into a single space, and to wrap text onto multiple lines as needed to fit within its container.
+  */
+  white-space: pre-wrap; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* hides scrollbar */
+.message::-webkit-scrollbar {
+  display: none;
+}
+
+#form1 {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    background: #40414F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 60px;
+    padding: 10px 20px;
+    border: 2px solid #868686;
+    touch-action: manipulation;
+    overflow: visible;
+   }
+
+.sarsswitch {
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 20px;
+    bottom: 0;
+    /* right: -69%;*/
+    /* margin-top: -105px; */
+}
+
+.sarsswitch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 8px;
+    bottom: 4px;
+    right: 6px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(40px);
+  -ms-transform: translateX(40px);
+  transform: translateX(40px);
+} 
+
+textarea {
+  width: 100%;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px;
+  background: transparent;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  
+}
+.btn-group {
+  display: flex;
+  overflow: visible;
+  touch-action: manipulation;
+  margin-right: 0%;
+}
+
+.but2 {
+  
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 40px;
+  background: #dcdcdcf3;
+  cursor: default;
+  display: block;
+  margin-left: 12px;
+  overflow-y: hidden;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), /* Add a subtle inner shadow */ 
+    4px 4px 4px rgba(0, 0, 0, 0.15), /* Add a slightly stronger inner shadow */
+    6px 6px 6px rgba(0, 0, 0, 0.1), /* Add an even stronger inner shadow */ 
+    0 0 10px rgba(0, 0, 0, 0.5); /* Add a circle shadow around the button */
+  overflow-x: visible;
+}
+.but2:active {
+  /* Styles to apply when the button is being clicked or pressed */
+  box-shadow: none; /* Remove the shadows */
+  background-color: red; /* Change the background color to red */
+  transform: scale(1.1); /* Increase the size of the button slightly */
+  filter: brightness(1.5); /* Increase the brightness of the button */
+  outline: 4px solid red; /* Add a glowing outline to the button */
+}
+
+.but3 {
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 40px;
+  background: #fff;
+  cursor: default;
+  display: block;
+  overflow-y: hidden;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2), /* Add a subtle inner shadow */ 
+    4px 4px 4px rgba(0, 0, 0, 0.15), /* Add a slightly stronger inner shadow */ 
+    6px 6px 6px rgba(0, 0, 0, 0.1), /* Add an even stronger inner shadow */ 
+    0 0 10px rgba(0, 0, 0, 0.5); /* Add a circle shadow around the button */
+  overflow-x: visible;
+  touch-action: manipulation;
+}
+.but3:active {
+  /* Styles to apply when the button is being clicked or pressed */
+  box-shadow: none; /* Remove the shadows */
+  background-color: #ffff66; /* Change the background color to a more intense yellow */
+  transform: scale(1.1); /* Increase the size of the button slightly */
+  filter: brightness(1.5); /* Increase the brightness of the button */
+  outline: 4px solid #ffff00; /* Add a glowing outline to the button */
+}
+
+button.recording {
+  background-color: yellow;
+  height: 41px;
+  width: 41px;
+  border-radius: 25px;
+  animation: flicker 0.8s infinite;
+}
+
+@keyframes flicker {
+  50% {
+    box-shadow: 0 0 2px 3px #ff0;
+  }
+}
+
+/*.but4 {
+  /*outline: 0;
+  border: 0;
+  cursor: pointer;
+  /* background: #fff dcdcdcf3;* */
+
+  /*border: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  cursor: default;
+  display: block;
+}*/
+
+
+form img {
+    width: 36px;
+    height: 36.5px;
+    border-radius: 50%;
+    touch-action: manipulation;
+}
+
+.navbar {
+  width: 100%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+}
+nav {
+  flex: 1;
+  text-align: center;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #fff; 
+  font-size: 20px;
+}
+
+.contact-box {
+  height: 100vh;
+  background-color: transparent;
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+
+#form2 {
+  margin: 1000px;
+  
+}
+
+/*.input-field {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;*/
+.input-field {
+  width: 400px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+}
+  
+
+
+.textarea-field {
+  height: 150px;
+  padding-top: 10px; 
+  fill: #fff;
+
+}
+
+.btn {
+  border-radius: 15px;
+  width: 50%;
+  height: 50%;
+  color: #fff;
+  margin-top: 18px;
+  padding: 8px;
+  background-color: #47c35a;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  
+}
+
+#contact {
+
+  width: 100vw;
+  height: 100vh;
+  padding: 0;  
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/backgroundthird.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+
+
+}
+
+iframe {
+  margin-top: 20px; /* this will add 20px of space above the video */
+  width: 560px;
+  height: 315px;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 50px;
+}
+/*instructions*/
+#aanwysingstyle {
+   width: 50%;
+   text-align: justify;
+   color: white;
+   margin-top: 20px;
+  
+}
+
+/*instructions*/
+#gebruiksaanwysing {
+  width: 100vw;
+  height: 100vh;
+  padding: 1%;
+  /*background: #1b26a4;*/
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/hendrik_cornelissen_zb.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+#about {
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  /*background: #1b26a4;*/
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/backgrounfsecond.jpg);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+}
+
+#ons {
+
+  width: 100vw;
+  height: 100vh;
+  padding: 5%;
+  /*background: #1b26a4;*/
+  background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url(assets/background_protea.jpg);
+  background-position: center;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ 
+  justify-content: center;
+
+}
+
+/* styles for screens smaller than or equal to 768px */
+@media (max-width: 768px) {
+  element.style {
+    font-size: 15px;
+  }
+    
+  #app {
+    flex-direction: column;
+  }
+
+  .chat {
+    flex-direction: column;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #chat_container {
+    flex-direction: column;
+    display: flex;
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+  }  
+}
+
+/* styles for screens 250px to equal to 320px (e.g. iPhone 5, 5s, SE) */
+@media (min-width: 250px) and (max-width: 320px) {
+  #app {
+    flex-direction: column;
+  }
+
+  .chat {
+    flex-direction: column;
+  }
+      
+  #contact {
+    flex-direction: column;
+  }
+  #chat_container {
+    flex-direction: column;
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+    
+  }
+  #form2 {
+    flex-direction: column;
+    
+  }
+  .input-field {
+    width: 260px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+  }
+    form img {  
+    width: 36.5px;
+    height: 36.5px;
+  }
+    nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10.2px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 10px;
+  }
+  #chat_container .wrapper {
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    padding: 5px;
+    display: inline-flex;
+    width: inherit;
+    overflow: visible;
+  }
+  
+  #aanwysingstyle {
+     width: 90%;
+     margin-top: 2px;
+     font-size: 13px
+    }
+  
+  h2 {
+    font-size: 28px;
+    }
+  
+  h1 {
+    font-size: 30px;
+    overflow: visible;
+    }
+  
+  p { 
+    font-size: 13px;
+  }
+  
+  iframe {
+  margin-top: 5px; /* this will add 20px of space above the video */
+  width: 80%;
+  }
+}
+
+/* styles for screens larger than 320px and smaller than or equal to 376px (e.g. iPhone 6, 6s, 7, 8) */
+@media (min-width: 321px) and (max-width: 376px) {
+  #app {
+    flex-direction: column;
+  }
+
+  .chat {
+    flex-direction: column;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #chat_container {
+    flex-direction: column;
+  }
+  #form2 {
+    flex-direction: column;
+    
+  }
+  .input-field {
+    width: 320px;
+    height: 40px;
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #777;
+    border-radius: 14px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+  }
+    form img {  
+    width: 36.5px;
+    height: 36px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+  }
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 11px;
+  }
+  #about {
+    height: auto;
+  } 
+  #chat_container .wrapper {
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    padding: 5px;
+    display: inline-flex;
+    width: inherit;
+    overflow: visible;
+  }
+    #aanwysingstyle {
+    width: 90%;
+    font-size: 13.5px;
+    margin-top: 5px;
+  }
+    iframe {
+    margin-top: 10px;
+    width: 80%  
+    }
+    h2 {
+    font-size: 40px;
+    }
+    .snaakscontainer {
+    position: relative;
+    bottom: 1px;
+    right: 2%;
+  }
+}
+
+/* styles for screens larger than 377px and smaller than or equal to 415px (e.g. iPhone 6 Plus, 6s Plus, 7 Plus, 8 Plus) */
+@media (min-width: 377px) and (max-width: 415px) {
+  #app {
+    flex-direction: column;
+  }
+
+  .chat {
+    flex-direction: column;
+  }
+  #contact {
+    flex-direction: column;
+  }
+  #chat_container {
+    flex-direction: column;
+    padding-bottom: 130px;
+    /*transform: scaleY(0.8);*/
+    /*transform-origin: top;*/
+  }
+  #form1{
+    position: relative;
+    top: -15%  
+  }
+  
+  #form2 {
+    flex-direction: column;
+    
+  }
+  .input-field {
+  width: 380px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+  }
+  form img {  
+    width: 36.5px;
+    height: 36px;
+  }
+  nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 12px;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 15.5px;
+  }
+   #chat_container .wrapper {
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+    padding: 5px;
+    display: inline-flex;
+    width: inherit;
+    overflow: visible;
+  }
+  
+  p {
+    overflow: visible;
+  }
+  
+  h1 {
+    overflow: visible;
+  }
+  
+    #aanwysingstyle {
+    width: 90%;
+  } 
+  iframe {
+  margin-top: 10px; /* this will add 10px of space above the video */
+  width: 80%;
+  }
+  
+  h2 {
+    font-size: 40px;
+    }  
+  .snaakscontainer {
+    position: relative;
+    bottom: 112px;
+    right: 2%;
+  }
+}
+
+@media (min-width: 416px) and (max-width: 450px) {
+  #form2 {
+    width: 90%;
+    max-width: none;
+    margin: 0;
+  }
+  .input-field {
+  width: 370px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+  }
+  form img {  
+    width: 30px;
+    height: 36px;
+  }
+  iframe {
+    margin-top: 10px; /* this will add 10px of space above the video */
+    width: 80%;
+  }
+}
+
+@media (min-width: 451px) and (max-width: 480px) {
+  #form2 {
+    width: 90%;
+    max-width: none;
+    margin: 0;
+  }
+.input-field {
+  width: 370px;
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid #777;
+  border-radius: 14px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+  color: #ffffff; /* or rgb(255, 255, 255) or hsl(0, 0%, 100%) */
+  }
+  .but2 {
+    flex-direction: column;
+  }
+  .but3 {
+    flex-direction: column;
+  }
+  form img {  
+    width: 30px;
+    height: 36px;
+  }
+  iframe {
+    margin-top: 10px; /* this will add 10px of space above the video */
+    width: 80%;
+  }
+}
+
+  /* Media query for youtube video screens with a width of 481px to 541px */
+  @media (min-width: 481px) and (max-width: 541px) {
+    h2 {
+      font-size: 40px;
+    }
+    iframe {
+      width: 90%;
+    }
+   #aanwysingstyle {
+    width: 80%;
+    text-align: justify;
+    color: #fff;
+    margin-top: 20px;
+    }
+}
+
+  /* Media query for youtube video screens with a width of 541px to 980px */
+  @media (min-width: 541px) and (max-width: 980px) {
+    h2 {
+      font-size: 40px;
+    }
+    iframe {
+      width: 80%;
+    }
+   #aanwysingstyle {
+    width: 70%;
+    text-align: justify;
+    color: #fff;
+    margin-top: 20px;
+    }
+    
+    .snaakscontainer {
+    position: relative;
+    bottom: 1px;
+    right: 5%;
+  }
+}
+
+  /* Media query for youtube video screens with a width of 481px to 541px */
+  @media (min-width: 981px) and (max-width: 1300px) {
+    h2 {
+      font-size: 40px;
+    }
+    iframe {
+      width: 80%;
+    }
+   #aanwysingstyle {
+    width: 70%;
+    text-align: justify;
+    color: #fff;
+    margin-top: 20px;
+    }
+    
+    .snaakscontainer {
+    position: relative;
+    bottom: 1px;
+    right: 18%;
+  }
+}
+

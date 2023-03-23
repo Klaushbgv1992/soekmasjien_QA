@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="soek.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoekMasjien</title>
+    <link rel="stylesheet" href="style.css" />
+    
+    <!-- Include the annyang library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  </head>
+  <body>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=iRKSXkL8"></script>     
+
+    <div id="app">
+      <h1 style="text-align: center; color: white; font-size: 50px;">Soekmasjien</h1>
+      <div class="navbar">
+        
+        <nav>
+          <ul>
+            <li><a href ="#gebruiksaanwysing">Gebruiksaanwysing</a></li>
+            <li><a href ="#about">Oor Soekmasjien</a></li>
+            <li><a href ="#ons">Oor Ons</a></li>
+            <li><a href ="#contact">Kontak Ons</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="popup">
+        <button id="close">&times;</button>
+        
+        <p>
+          <p style="text-align:center;">
+            <br>
+            Welkom by Soekmasjien!
+            <br>
+          </p>
+          
+          <br>
+          Die eerste van sy soort in Afrikaans. ’n Afrikaanse Kunsmatige intelligensie (KI) -kletsbot wat jou in Afrikaans kan hoor en antwoorde in 'n Afrikaanse stem kan gee oor enige-iets wat jy wil weet. Ons is baie opgewonde om hierdie nuwe tegnologie aan ons gemeenskap te bied en ons glo dat dit 'n belangrike rol sal speel om Afrikaans te bevorder en te bemagtig. Probeer dit vandag en ontdek hoe maklik dit is om met Soekmasjien te kommunikeer in jou eie moedertaal
+          <br>
+
+          <br>
+          Die krag van Soekmasjien: Soekmasjien is 'n tegnologie wat gebruik word om menslike gesprekke met 'n rekenaar te simuleer. 
+          Dit word dikwels gebruik om kliënte-ondersteuning te verbeter en te vereenvoudig. Soekmasjien werk deur vrae te stel en te antwoord in Afrikaans. 
+          Dit is in staat om vrae te verstaan en te beantwoord op 'n manier wat soos 'n menslike gespreksmaat lyk. Soekmasjien is aanpasbaar en kan op verskillende maniere gebruik word, byvoorbeeld om 'n klantediens te bied of om inligting te verskaf. 
+          Dit kan ook gebruik word om prosesse te outomatiseer, byvoorbeeld om 'n bestelling te plaas of 'n afspraak te maak. Kontak ons vir meer inligting. Soekmasjien kan op verskillende platforms gebruik word, soos webwerwe, sosiale media, en selfs SMS. 
+          Dit kan ook op verskillende toestelle gebruik word, soos slimfone, tablette, en rekenaars. Soekmasjien kan geïntegreer word met ander tegnologieë, soos kunsmatige intelligensie en gegevensanalise, om die gebruikservaring te verbeter. 
+          Dit kan ook gebruik word om inligting te samel en te analiseer om kliënte behoeftes beter te verstaan. 
+          <br>
+          
+          <br>
+          Soekmasjien kan 'n belangrike rol speel in die verbetering van kliënttevredenheid en lojaliteit. 
+          Dit kan ook help om tyd en koste te bespaar deur mense te help om vinniger inligting te kry wat hulle benodig. 
+          Soekmasjien kan ook help om die werklas van menslike werkers te verlig deur take te outomatiseer. 
+          Dit kan ook gebruik word om die algemene ervaring van die gebruiker te verbeter deur vinniger en meer akkurate antwoorde te gee. 
+          Soekmasjien kan ook help om die verkeer op 'n webwerf te verhoog deur gebruikers te help om die inligting te kry wat hulle benodig. 
+          Soekmasjien kan help om mense te verbind en kan ook bydra tot die ekonomiese ontwikkeling van Suid-Afrika deur mense te help om tegnologies vaardig te word en om inligting te verskaf wat kan help om besigheid te dryf en te groei.
+          <br>
+          
+          <br>
+          Hoe om Soekmasjien te gebruik:
+          <br>
+          <br>
+          <li> Druk een keer op die mikrofoonknoppie en los dit om die mikrofoon te aktiveer. Die knoppie sal dan verlig word in ‘n geel sirkel.</li>
+          <li> Soekmasjien luister nou aktief na jou stem en wag vir instruksies.</li>
+          <li> Gee jou verbale instruksie vir Soekmasjien.</li>
+          <li> Wag nadat jy gepraat het totdat jou woorde in die soekbalk verskyn.</li>
+          <li> Jy kan ook jou vra intik en in the soekbalk verander soos nodig.</li>
+          <li> Wanneer jy tevrede is met die woorde in die soekbalk druk op die soekknoppie (Suid Afrikaanse vergrootglas) om jou opdrag aan Soekmasjien te stuur.</li>
+          <li> Soekmasjien analiseer nou jou vraag en beantwoord dit dan.</li>
+          <li> Laaste stap: herhaal, geniet, en deel Soekmasjien met jou familie en vriende.</li>                 
+          <br>
+
+          Instruksies vir die beste resultate: Gebruik 'n hoëgehalte-mikrofoon. 
+          Praat hard en met goeie tempobeheer in 'n rustige omgewing. 
+          Praat in dieselfde rigting en n matige tempo. Maak seker dat jou uitspraak duidelik is. 
+          Maak seker jou mikrofoon is aan.
+
+        </p>
+        
+      </div>
+
+      <script>
+        window.addEventListener("load", function(){
+          setTimeout(
+            function open(event){
+              document.querySelector(".popup").style.display = "block";
+            },
+            1000
+          )
+        });
+        document.querySelector("#close").addEventListener("click", function(){
+          document.querySelector(".popup").style.display = "none";
+        });
+ 
+      </script>
+      
+
+      <div id="chat_container"></div>
+
+      <form id="form1">      
+        <textarea name="prompt" rows="1" cols="1" placeholder="Vra Soekmasjien..." id= "speechToText" x-webkit-speech></textarea>
+        <div class="btn-group">            
+          <!-- Use annyang's start function to start speech recognition and specify the Afrikaans language -->
+          <button type="button" class="but3"><img src="assets/microphone.png" id="microphone"></button>
+          <button type="submit" class="but2"><img src="soek.ico" alt="send" />
+        </div>
+         <!-- Rounded switch -->
+      </form> 
+        <div class="snaakscontainer" style="text-align: right; margin-top: 10px;"> 
+          <label class="sarsswitch">
+            <input type="checkbox" class="sarsswitch" id="sarsswitch" name='sarsswitch'>
+            <span class="slider round"></span>
+          </label>
+          <div id="snaaks">Snaaks</div>
+          </div>
+   
+    </div>
+
+
+<script>
+
+const form = document.getElementById("form1");
+const microphone = document.getElementById('microphone');
+let recording = false;
+
+// Add an event listener for the 'load' event on the window object
+window.addEventListener('load', function(){
+  // Check if the user is using an iPhone
+  if (!navigator.userAgent.includes('iPhone')) {
+    // Trigger a 'mousedown' event on the microphone button
+    microphone.dispatchEvent(new Event('click'));
+    // Schedule a 'mouseup' event to be triggered on the microphone button after 2 seconds
+    setTimeout(function() {
+      microphone.dispatchEvent(new Event('click'));
+    }, 200);
+  }
+});
+
+// Add event listener for the "submit" event on the form
+form.addEventListener("submit", function(event) {
+  event.preventDefault();
+  if (recording) {
+    // Stop the recording by triggering a click event on the microphone button
+    microphone.dispatchEvent(new Event('click'));
+  }
+  });
+  
+  
+// Add event listeners for the 'click' and 'touchstart' events on the microphone button
+microphone.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  // Check if the user is using an iPhone
+  if (navigator.userAgent.includes('iPhone')) {
+    alert('Voice recognition is currently not available for iOS');
+    return;
+  }
+
+  // Toggle recording state
+  recording = !recording;
+  if (recording) {
+    // Start recording
+    annyang.start({ continuous: false, lang: 'af-ZA'});
+    // Update microphone appearance
+    microphone.parentElement.classList.add('recording');
+  } else {
+    // Stop recording
+    annyang.setLanguage('af-ZA');
+    annyang.abort();
+    // Update microphone appearance
+    microphone.parentElement.classList.remove('recording');
+  }
+});
+  
+  microphone.addEventListener('mousedown', function() {
+  // Abort the speech recognition process
+  annyang.abort();
+});
+
+
+
+annyang.addCallback('result', function(result) {
+  document.getElementById('speechToText').value = result[0];
+});
+      
+    </script>
+
+ 
+
+    <script type="module" src="script.js"></script>
+      
+    <section id="gebruiksaanwysing"> 
+      <div id="gebruiksaanwysing">
+        <h2>Gebruiksaanwysings </h2>
+        <iframe src="https://www.youtube.com/embed/wy_AbqXro18?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div id="aanwysingstyle"> 
+          <ol>
+            <li> 1. Maak die venster webblad toe deur op die rooi knoppie regs bo te druk.</li>
+            <li> 2. Druk een keer op die mikrofoonknoppie en los dit om die mikrofoon te aktiveer. Die microfoon knoppie sal daarna dan verlig word met 'n geel rand wat aandui dat soekmasjien nou aktief na jou luister en vir jou instruksies wag.</li>
+            <li> 3. Gee jou verbale instruksie vir Soekmasjien en wag nadat jy gepraat het totdat jou woorde in die soekbalk verskyn. Let wel: jy kan ook jou vra intik en soos nodig redigeer in the soekbalk.</li>
+            <li> 4. As jy tevrede is met die woorde in die soekbalk druk op die soekknoppie (Suid Afrikaanse vergrootglas) om jou opdrag aan Soekmasjien te stuur. Soekmasjien analiseer nou, dink oor, en beantwoord jou vraag.</li>
+            <li> 5. Laaste stap: herhaal, geniet, en deel Soekmasjien met jou kliënte, familie en vriende.</li>
+          <ol>
+        </div>
+      </div>
+    </section>
+
+      
+    <section id="about">
+      <div id="about">
+        <h1 style="text-align: center; color: white; font-size: 50px;">Oor Soekmasjien </h1>
+        <p style="color: white; text-align: justify; margin-top: 20px;">Soekmasjien is 'n kunsmatige intelligensie (KI)-diens wat in staat is om natuurlike taalverwerkingsprestasies op 'n hoë vlak te lewer. Die diens bied 'n wye verskeidenheid dienste aan, waaronder die vermoë om tekste en gesprekke te genereer, te antwoord op vrae, om opdragte te volg, en om teks en spraak te vertaal. Dit kan ook gebruik word om komplekse take om te sit in die uitvoering van data-analise, dokumentbehandeling, en selfs die ontwikkeling van aanlyn-oplossings.
+          Met sy uitgebreide vermoëns kan Soekmasjien 'n waardevolle hulpmiddel wees vir verskeie industrieë en organisasies wat op soek is na maniere om hul prosesse te optimaliseer en te verbeter. Byvoorbeeld, kan die diens gebruik word om kliëntediens-afdelings te ondersteun deur vinnig en akkuraat te antwoord op kliëntevrae en -navrae. Dit kan ook gebruik word om te help met die ontwikkeling van inhoud, deur middel van die skryf van artikels en blogposte, of selfs die generering van komplekse dokumente soos kontrakte of verslae.
+          Verder kan Soekmasjien ook gebruik word om te help met die ontwikkeling van aanlyn-oplossings, soos chatbots en digitale assistente. Dit kan help om gesprekke met kliënte te lei, om te help met die beantwoording van vrae, of om te help met die bemarking van produkte of dienste. Met sy vermoë om te antwoord op natuurlike taalvrae en om opdragte te volg, kan Soekmasjien 'n belangrike hulpmiddel wees om kliënte te help om snel die informasie te kry wat hulle nodig het, en om hulle te help om maklik te navigeer deur 'n aanlyn-omgewing.
+          In samenvatting is Soekmasjien 'n kragtige KI-diens wat 'n wye verskeidenheid dienste bied wat kan help om prosesse te optimaliseer en te verbeter, en wat kan help om kliënte te ondersteun en te bevorder. Dit bied 'n waardevolle hulpmiddel vir verskeie industrieë en organisasies wat op soek is na maniere om hul aanlyn-aanwesigheid te versterk en te bevorder</p>
+
+      </div>
+    </section>
+      
+    <section id="ons">
+      <div id="ons">
+        <h1 style="text-align: center; color: white; font-size: 50px;">Oor Ons </h1>
+        <p style="color: white; text-align: justify; margin-top: 20px;">
+          <br>
+          Ons is 'n groep trotse jong professionele ingenieurs wat gefokus is op die ontwikkeling van aanlyn oplossings! 
+          Ons glo dat die internet en Afrikaanse taal 'n kragtige hulpmiddel is vir persoonlike sowel as besigheidsontwikkeling. 
+          Ons streef daarna om ons kliënte te help om die volle potensiaal van hul aanlyn aanwesigheid te benut, terwyl ons ook Afrikaans bevorder. 
+          <br>
+          <br>
+          Ons bied 'n wye verskeidenheid dienste aan, van webontwerp en webontwikkeling tot sosiale media bestuur, dataverwerking, en SEO-optimalisering. 
+          Ons is toegewyd aan die lewering van hoë gehalte werk en streef daarna om altyd ons beste te doen om ons kliënte tevrede te stel. 
+          As u belangstel om saam met ons te werk of meer wil weet  oor ons dienste, kontak ons gerus! Ons sal u graag help om u aanlyn doelwitte te bereik.
+          <br>
+         </p>
+
+      </div>
+    </section>
+    
+    <section id="contact">
+
+
+      <div id="contact">
+         <div class="contact-box" style="margin-top: 20px;">
+          <form id= "form2" action="https://formsubmit.co/soekmasjien@soekmasjien.co.za" method="POST">
+            <p style="text-align: center; font-size: 30px; color: white;">Kom ons werk saam</p>
+            <input type="text" name="name" class="input-field" placeholder="Jou Naam" required>
+            <input type="email" name="email" class="input-field" placeholder="Jou e-pos adres" required>
+            <textarea name="text" class="input-field textarea-field" placeholder="Jou Boodskap" required></textarea>
+            <button type="submit" class="btn">Stuur boodskap</button>
+          </form>
+        </div>
+      </div>
+    </section>   
+
+  </body>
+  
+</html>

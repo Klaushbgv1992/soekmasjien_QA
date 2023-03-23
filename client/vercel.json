@@ -1,0 +1,3 @@
+{
+    "routes": [{ "src": "/index.html", "dest": "/contact.html", "status": 200 }]
+}
