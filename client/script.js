@@ -79,9 +79,9 @@ const handleSubmit = async (e) => {
     // Check the state of the .sarsswitch checkbox
     const sarsswitch = document.getElementById("sarsswitch");
     if (sarsswitch.checked) {
-        prompt = "Geef alstublieft een sarcastisch en humoristisch antwoord op de volgende vraag" + data.get('prompt') + "?";
+        prompt = "Gee asseblief 'n sarkastiese en humoristiese antwoord op die volgende vraag" + data.get('prompt') + "?";
     } else {
-        prompt = "Geef alle antwoorden in het Nederlands" + data.get('prompt') + "?";
+        prompt = "Gee al die antwoorde in Afrikaans" + data.get('prompt') + "?";
     }
 
     userQuestionCounter++;
@@ -161,7 +161,7 @@ form.addEventListener('keyup', (e) => {
     }
 })
 
-const initialPrompt = "Zeg tegen me -Hallo, mijn naam is Zoekmachine, stel je vraag- in het Nederlands?"
+const initialPrompt = "Se vir my -Hello my naam is Soekmasjien vra jou vraag- in Afrikaans?"
 
 document.addEventListener("DOMContentLoaded", async () => {
   form.elements[0].value = initialPrompt
